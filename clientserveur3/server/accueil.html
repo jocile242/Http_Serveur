@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pathway+Extreme:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Accueil</h2>
+        </div>
+        <form action="http://localhost:8000/accueil" method="Get" class = "form" target="_self">
+            <label for="number">Number:</label>
+            <input type="number" name="number1" placeholder="Entrer un chiffre">
+            <label for="number">Number:</label>
+            <input type="number" name="number2" placeholder="Entrer un deuxième chiffre">
+            <label for="operation">Operation:</label>
+            <select name="operation">
+                <option value="add">Addition</option>
+                <option value="sub">Soustraction</option>
+                <option value="mul">Multiplication</option>
+                <option value="div">Division</option>
+            </select>
+            <input type="submit" class="btn">
+        </form>
+        <div class="section-header">
+            <h2 class="section-title">Le calcul de la  somme </br> est la suivante : </h2>
+            <p> Ici le résultat de la somme : </p>
+            <p th:text="${result}"></p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
